@@ -1,8 +1,11 @@
-# Nerfies
+# SCFlow2: Plug-and-Play Object Pose Refiner with Shape-Constraint Scene Flow
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [SCFlow2 website](https://scflow2.github.io). The website template is from [Nerfies](https://github.com/google/nerfies).
 
 If you find Nerfies useful for your work please cite:
+
+# TODO: Modify this information:
+
 ```
 @article{park2021nerfies
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
