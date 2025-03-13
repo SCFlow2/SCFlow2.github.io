@@ -11,6 +11,12 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
+    window.onload = function() {
+      var videos = document.getElementsByTagName('video');
+      for (var i = 0; i < videos.length; i++) {
+        videos[i].setAttribute('preload', 'auto');
+      }
+    }
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -42,6 +48,15 @@
 </head>
 <body>
 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
 
 
 <section class="hero">
@@ -228,6 +243,42 @@
 </section>
 
 
+<style>
+  .video-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .video-table td {
+    padding: 10px;
+    text-align: center !important; 
+    border: 1px solid gray;
+    
+  }
+  .video-table video {
+    /* width: 100%;
+    height: auto; */
+    height: 200px;
+    width: auto;
+  }
+  .label-ours {
+    color: lime; /* 预定义的鲜艳绿色 */
+    font-size: 12px;
+    font-weight: bold;
+  
+  }
+
+  .label-gt {
+    color: blue;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  a[href="https://rgbinhandscanning.github.io/"],
+  a[href="https://chenhsuanlin.bitbucket.io/bundle-adjusting-NeRF/"],
+  a[href="https://www.magicleap.com/magic-leap-2"] {
+    text-decoration: underline;
+  }
+</style>
+
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -238,11 +289,11 @@
       </div>
 
     </div>
-    <div class="content has-text-justified">
+    <!-- <div class="content has-text-justified">
       <p>
       Our method optimizes object shape, color, and pose progressively without any segments, which produces globally-consistent results and outperforms state of the art.
       </p>
-    </div>
+    </div> -->
 <table class="video-table">
   <tr>
     <td><strong>Dataset Name </strong></td>
@@ -253,10 +304,10 @@
   </tr>
   <tr>
     <td><strong>YCB-V </strong></td>
-    <td><video src="./static/videos/ycbv/ycbv_init_1.mp4" autoplay muted loop playsinline></video></td>
-    <td><video src="./static/videos/ycbv/ycbv_refined_1.mp4" autoplay muted loop playsinline></video></td>  
-    <td><video src="./static/videos/ycbv/ycbv_init_2.mp4" autoplay muted loop playsinline></video></td>
-    <td><video src="./static/videos/ycbv/ycbv_refined_2.mp4" autoplay muted loop playsinline></video></td>
+    <td><video src="/static/videos/ycbv/ycbv_init_1.mp4" autoplay muted loop playsinline></video></td>
+    <td><video src="/static/videos/ycbv/ycbv_refined_1.mp4" autoplay muted loop playsinline></video></td>  
+    <td><video src="/static/videos/ycbv/ycbv_init_2.mp4" autoplay muted loop playsinline></video></td>
+    <td><video src="/static/videos/ycbv/ycbv_refined_2.mp4" autoplay muted loop playsinline></video></td>
   </tr>
 
 </table>
@@ -265,9 +316,9 @@
 </section>
 
 
-<section class="section" id="BibTeX: TODO: modify">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
+    <h2 class="title">BibTeX: TODO: modify</h2>
     <pre><code>@article{park2021nerfies,
   author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
   title     = {Nerfies: Deformable Neural Radiance Fields},
