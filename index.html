@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SCFlow2: Plug-and-Play Object Pose Refiner with Shape-Constraint Scene Flow.</title>
+  <title>SCFlow2: Plug-and-Play Object Pose Refiner with Shape-Constraint Scene Flow</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -287,40 +287,44 @@
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results on YCB-V Dataset</h2>
+        <h2 class="title is-3">Results on YCB-V dataset</h2>
       </div>
 
     </div>
-    <!-- <div class="content has-text-justified">
+    <div class="content has-text-justified">
       <p>
-      Our method optimizes object shape, color, and pose progressively without any segments, which produces globally-consistent results and outperforms state of the art.
+        The video shows the comparison before and after we refine the coarse pose provided by <a href="https://evinpinar.github.io/foundpose/">FoundPose</a>.
       </p>
-    </div> -->
+    </div>
 <table class="video-table">
-  <tr>
+  <!-- <tr>
     <td><strong><a href="https://evinpinar.github.io/foundpose/">FoundPose</a></strong></td>
     <td><strong>Refined</strong></td>
     <td><strong>GT</strong></td>
-  </tr>
+  </tr> -->
   <tr>
-    <td><video src="./static/videos/ycbv/ycbv_54_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/ycbv/ycbv_54_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/ycbv/ycbv_54_foundpose_refined.mp4" autoplay muted loop playsinline></video></td>  
-    <td><video src="./static/videos/ycbv/ycbv_54_foundpose_gt.mp4" autoplay muted loop playsinline></video></td> 
+    <td><video src="./static/videos/ycbv/ycbv_54_foundpose_gt.mp4" autoplay muted loop playsinline></video></td>  -->
+    <td><video src="./static/videos/ycbv_48_cat.mp4" autoplay muted loop playsinline></video></td>
   </tr>
   <tr>
-    <td><video src="./static/videos/ycbv/ycbv_48_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/ycbv/ycbv_48_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/ycbv/ycbv_48_foundpose_refined.mp4" autoplay muted loop playsinline></video></td>  
-    <td><video src="./static/videos/ycbv/ycbv_48_foundpose_gt.mp4" autoplay muted loop playsinline></video></td> 
+    <td><video src="./static/videos/ycbv/ycbv_48_foundpose_gt.mp4" autoplay muted loop playsinline></video></td>  -->
+    <td><video src="./static/videos/ycbv_54_cat.mp4" autoplay muted loop playsinline></video></td>
   </tr>
   <tr>
-    <td><video src="./static/videos/ycbv/ycbv_58_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/ycbv/ycbv_58_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/ycbv/ycbv_58_foundpose_refined.mp4" autoplay muted loop playsinline></video></td>  
-    <td><video src="./static/videos/ycbv/ycbv_58_foundpose_gt.mp4" autoplay muted loop playsinline></video></td> 
+    <td><video src="./static/videos/ycbv/ycbv_58_foundpose_gt.mp4" autoplay muted loop playsinline></video></td>  -->
+    <td><video src="./static/videos/ycbv_58_cat.mp4" autoplay muted loop playsinline></video></td>
   </tr>
   <tr>
-    <td><video src="./static/videos/ycbv/ycbv_59_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/ycbv/ycbv_59_foundpose_init.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/ycbv/ycbv_59_foundpose_refined.mp4" autoplay muted loop playsinline></video></td>  
-    <td><video src="./static/videos/ycbv/ycbv_59_foundpose_gt.mp4" autoplay muted loop playsinline></video></td> 
+    <td><video src="./static/videos/ycbv/ycbv_59_foundpose_gt.mp4" autoplay muted loop playsinline></video></td>  -->
+    <td><video src="./static/videos/ycbv_59_cat.mp4" autoplay muted loop playsinline></video></td>
   </tr>
 </table>
 
@@ -333,7 +337,7 @@
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results on BOP Dataset</h2>
+        <h2 class="title is-3">Robustness to initial pose jitter</h2>
       </div>
 
     </div>
@@ -345,29 +349,29 @@
 <table class="video-table">
   <tr>
     <td style="width: 100px;"><strong>Dataset Name </strong></td>
-    <td><strong>Initialization</strong></td>
-    <td><strong>Refined</strong></td>
+    <td><strong>Results comparison</strong></td>
+    <!-- <td><strong>Refined</strong></td> -->
     <!-- <td><strong>Initialization</strong></td>
     <td><strong>Refined</strong></td> -->
   </tr>
   <tr>
-    <td><strong>YCB-V </strong></td>
-    <td><video src="./static/videos/ycbv/ycbv_50_init.mp4" autoplay muted loop playsinline></video></td>
-    <td><video src="./static/videos/ycbv/ycbv_50_refined.mp4" autoplay muted loop playsinline></video></td>  
+    <td><strong>T-LESS </strong></td>
+    <td><video src="./static/videos/tless_jtrefined.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/ycbv/ycbv_50_refined.mp4" autoplay muted loop playsinline></video></td>   -->
     <!-- <td><video src="./static/videos/ycbv/ycbv_init_2.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/ycbv/ycbv_refined_2.mp4" autoplay muted loop playsinline></video></td> -->
   </tr>
   <tr>
-    <td><strong>LM-O </strong></td>
-    <td><video src="./static/videos/lmo/lmo_init.mp4" autoplay muted loop playsinline></video></td>
-    <td><video src="./static/videos/lmo/lmo_refined.mp4" autoplay muted loop playsinline></video></td>  
+    <td><strong>TUD-L </strong></td>
+    <td><video src="./static/videos/tudl_jtrefined.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/lmo/lmo_refined.mp4" autoplay muted loop playsinline></video></td>   -->
     <!-- <td><video src="./static/videos/lmo/lmo_init_2.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/lmo/lmo_refined_2.mp4" autoplay muted loop playsinline></video></td> -->
   </tr>
   <tr>
-    <td><strong>TUDL </strong></td>
-    <td><video src="./static/videos/tudl/tudl_init.mp4" autoplay muted loop playsinline></video></td>
-    <td><video src="./static/videos/tudl/tudl_refined.mp4" autoplay muted loop playsinline></video></td>  
+    <td><strong>YCB-V </strong></td>
+    <td><video src="./static/videos/ycbv_jt_refined.mp4" autoplay muted loop playsinline></video></td>
+    <!-- <td><video src="./static/videos/tudl/tudl_refined.mp4" autoplay muted loop playsinline></video></td>   -->
     <!-- <td><video src="./static/videos/tudl/tudl_init_2.mp4" autoplay muted loop playsinline></video></td>
     <td><video src="./static/videos/tudl/tudl_refined_2.mp4" autoplay muted loop playsinline></video></td> -->
   </tr>
