@@ -94,7 +94,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2504.09160"
+                <a href="https://arxiv.org/pdf/2504.09160"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -103,7 +103,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2504.09160"
+                <a href="https://arxiv.org/abs/2504.09160"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -161,9 +161,9 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <div class="image-container">
-        <img src="./static/images/fig3.png" alt="Object pose refinement">
-      </div>
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/ycbv_53.mp4" type="video/mp4">
+      </video>
     </div>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -174,7 +174,7 @@
             We introduce SCFlow2, a plug-and-play refinement framework for 6D object pose estimation. 
             Most recent 6D object pose methods rely on refinement to get accurate results. However, most 
             existing refinements either suffer from noises in establishing correspondences, or rely on 
-            retraining for novel objects. SCFlow2 is based on the SCFlow model designed for iterative RGB 
+            retraining for novel objects. SCFlow2 is based on the <a href="https://github.com/YangHai-1218/SCFlow">SCFlow</a> model designed for iterative RGB
             refinement with shape constraint, but formulates the additional depth as a regularization in 
             the iteration via 3D scene flow for RGBD frames. The key design of SCFlow2 is an introduction 
             of geometry constraints into the training of recurrent match network, by combining the rigid-motion 
@@ -188,22 +188,6 @@
     </div>
     <!--/ Abstract. -->
 
-
-
-
-    <div class="hero-body">
-      <div class="image-container">
-        <img src="./static/images/fig1_s.png" alt="Object pose refinement">
-      </div>
-      <div class="content has-text-justified">
-        <p>
-          <b>Object pose refinement</b> is critical for accurate object pose estimation.  
-          <b>(a)</b> Most existing object pose refinement methods, including <a href="https://github.com/YangHai-1218/SCFlow">SCFlow</a>, rely on retraining for novel objects to achieve high accuracy.  
-          <b>(b)</b> The proposed SCFlow2 achieves even higher accuracy, and more importantly, generalizes well to novel objects without any retraining or fine-tuning.
-        </p>
-      </div>
-    </div>
-    
     <div class="hero-body">
       <div class="image-container">
         <img src="./static/images/fig2.png" alt="SCFlow & SCFlow2">
@@ -211,7 +195,7 @@
       <div class="content has-text-justified">
         <p>
           <b>Design overview of SCFlow and SCFlow2.</b> Given the object 3D mesh, we render an image <i>I<sub>1</sub></i> and depth map <i>D<sub>1</sub></i> based on an initial pose, and then use networks to compare these rendered outputs with the real input <i>I<sub>2</sub></i> and <i>D<sub>2</sub></i> to refine the pose.
-          <b>(a)</b> Although <a href="https://github.com/YangHai-1218/SCFlow">SCFlow</a> adds 3D shape constraint into the optimization loop, it formulates the matching process as a pure 2D problem, which is less effective in capturing 3D motions. On the other hand, it cannot work with RGBD images. A common practice is to use <a href="https://doi.org/10.1107/S0567739476001873">RANSAC Kabsch</a> to consume additional depth as a second stage, which however is only locally optimal within each stage.
+          <b>(a)</b> Although SCFlow adds 3D shape constraint into the optimization loop, it formulates the matching process as a pure 2D problem, which is less effective in capturing 3D motions. On the other hand, it cannot work with RGBD images. A common practice is to use RANSAC Kabsch to consume additional depth as a second stage, which however is only locally optimal within each stage.
           <b>(b)</b> SCFlow2 tackles these problems. We introduce an intermediate representation based on 3D scene flow to capture 3D motions in network optimization. Furthermore, we embed depth into the loop by formulating depth as an additional regularization to guide the correlation look-up iteratively, producing an end-to-end trainable system with RGBD images.
         </p>
       </div>
@@ -264,18 +248,26 @@
     <div class="hero-body">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Qualitative results</h2>
+          <h2 class="title is-3">Main results</h2>
         </div>
+      </div>
+
+      <div class="image-container">
+        <img src="./static/images/fig6.png" alt="effect of scflow2">
       </div>
       <div class="content has-text-justified">
         <p>
-          </b> Given the same pose initialization as that in GenFlow (<b>"GFlow"</b>) and FoundPose (<b>"FPose"</b>), denoted as <b>"GFlow (init)"</b> and <b>"FPose (init)"</b> respectively, our refinement method (<b>"+ Ours"</b>) produces considerably more accurate results compared to the refinement approaches in their original methods (note how our reprojected 3D mesh aligns better with the object contours) (<span style="color: blue; font-weight: bold;">GT</span>).
+        <b>Effect of SCFlow2.</b> All the baselines have their own refinement strategy. After using our method as a post-processing ("+ Ours"), the result consistently improves across all baselines on all datasets.
         </p>
       </div>
-      <div class="hero-body">
-        <div class="image-container">
-          <img src="./static/images/fig5.png" alt="SCFlow & SCFlow2">
-        </div>
+
+      <div class="image-container">
+        <img src="./static/images/fig5.png" alt="SCFlow & SCFlow2">
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          <b>Qualitative results.</b> Given the same pose initialization as that in GenFlow (<b>"GFlow"</b>) and FoundPose (<b>"FPose"</b>), denoted as <b>"GFlow (init)"</b> and <b>"FPose (init)"</b> respectively, our refinement method (<b>"+ Ours"</b>) produces considerably more accurate results compared to the refinement approaches in their original methods (note how our reprojected 3D mesh aligns better with the object contours).
+        </p>
       </div>
 
     </div>
@@ -288,18 +280,14 @@
     <div class="hero-body">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Robustness to initial pose jitter</h2>
+          <h2 class="title is-3">More results</h2>
         </div>
       </div>
       <div class="content has-text-justified">
         <p>
-          We add random rotation and translation noise to GT pose as the initialization and optimize the pose. Our method is robust to inaccurate initialization.
+          SCFlow2 demonstrates robustness to diverse pose initialization errors and can be seamlessly integrated as a plug-and-play refinement module into existing object pose estimation pipelines.
         </p>
       </div>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/ycbv_53.mp4"
-                type="video/mp4">
-      </video>
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/ycbv_54.mp4"
                 type="video/mp4">
@@ -309,27 +297,11 @@
                 type="video/mp4">
       </video>
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/tless_07.mp4"
-                type="video/mp4">
-      </video>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/tless_10.mp4"
-                type="video/mp4">
-      </video>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/tudl_01.mp4"
-                type="video/mp4">
-      </video>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/tudl_03.mp4"
                 type="video/mp4">
       </video>
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/hb_01.mp4"
-                type="video/mp4">
-      </video>
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/hb_02.mp4"
                 type="video/mp4">
       </video>
       <!-- <h2 class="subtitle has-text-centered">
@@ -378,13 +350,21 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX: </h2>
-    <pre><code>@article{wang2025scflow2,
-  author    = {Wang, Qingyuan and Song, Rui and Li, Jiaojiao and Cheng, Kerui and Ferstl, David and Hu, Yinlin},
-  title     = {SCFlow2: Plug-and-Play Object Pose Refiner with Shape-Constraint Scene Flow},
-  journal   = {CVPR},
-  year      = {2025},
-}</code></pre>
+    <h2 class="title">Citation</h2>
+    If you find this work useful in your research, please consider citing:
+    <pre><code>@inproceedings{wang2025scflow2,
+      title     = {SCFlow2: Plug-and-Play Object Pose Refiner with Shape-Constraint Scene Flow},
+      author    = {Wang, Qingyuan and Song, Rui and Li, Jiaojiao and Cheng, Kerui and Ferstl, David and Hu, Yinlin},
+      booktitle = {CVPR},
+      year      = {2025},
+    }
+@inproceedings{yang2023scflow,
+      title     = {Shape-Constraint Flow for 6D Object Pose Estimation},
+      author    = {Hai, Yang and Song, Rui and Li, Jiaojiao and Hu, Yinlin},
+      booktitle = {CVPR},
+      year      = {2023}
+    }
+</code></pre>
   </div>
 </section>
 
@@ -393,7 +373,7 @@
   <div class="container">
     <div class="content has-text-centered">
     The webpage is adapted from  <a
-    href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>.
+    href="https://github.com/nerfies/nerfies.github.io">here</a>.
   </div>
 
   </div>
