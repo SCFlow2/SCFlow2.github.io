@@ -11,6 +11,13 @@ If you find SCFlow2 useful for your work please cite:
       booktitle = {CVPR},
       year      = {2025},
     }
+  
+@inproceedings{yang2023scflow,
+      title     = {Shape-Constraint Flow for 6D Object Pose Estimation},
+      author    = {Hai, Yang and Song, Rui and Li, Jiaojiao and Hu, Yinlin},
+      booktitle = {CVPR},
+      year      = {2023}
+    }
 ```
 
 # Website License
